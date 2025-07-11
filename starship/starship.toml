@@ -1,0 +1,147 @@
+format = """$directory$git_branch$git_status$php$nodejs$python$go$docker_context$character"""
+
+[username]
+style_user = "green"
+style_root = "red"
+format = '[$user]($style) '
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = 'on [$hostname](yellow) '
+trim_at = "."
+disabled = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[❯](bold yellow)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[❯](bold red)"
+#  
+# configure directory
+[directory]
+read_only = " "
+truncation_length = 1
+truncate_to_repo = true # truncates directory to root folder if in github repo
+style = "green"
+
+[git_status]
+style = "purple"
+disabled = false
+
+#[cmd_duration]
+#min_time = 4
+#show_milliseconds = false
+#disabled = false
+#style = "bold red"
+
+[aws]
+symbol = "  "
+disabled = false
+
+[conda]
+symbol = " "
+disabled = true
+
+[dart]
+symbol = " "
+disabled = false
+
+[docker_context]
+symbol = " "
+format = "via [$symbol$context]($style) "
+style = "blue bold"
+only_with_files = false
+detect_files = ["docker-compose.yml", "docker-compose.yaml", "Dockerfile"]
+detect_folders = []
+disabled = true
+
+[elixir]
+symbol = " "
+disabled = true
+
+[elm]
+symbol = " "
+disabled = true
+
+[git_branch]
+symbol = " "
+style = "purple"
+disabled = false
+
+[golang]
+symbol = " "
+disabled = false
+
+[hg_branch]
+symbol = " "
+disabled = false
+
+[java]
+symbol = " "
+disabled = true
+
+[julia]
+symbol = " "
+disabled = true
+
+[memory_usage]
+symbol = "󰍛 "
+disabled = true
+
+[nim]
+symbol = " "
+disabled = true
+
+[nix_shell]
+symbol = " "
+disabled = true
+
+[package]
+symbol = "󰏗 "
+disabled = true
+
+[perl]
+symbol = " "
+disabled = true
+
+[php]
+symbol = " "
+disabled = false
+
+[python]
+symbol = ""
+#pyenv_version_name = true
+format = 'via [${symbol} (${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
+disabled = false
+
+[ruby]
+symbol = " "
+disabled = false
+
+[rust]
+symbol = " "
+disabled = true
+
+[scala]
+symbol = " "
+disabled = true
+
+[shlvl]
+symbol = " "
+disabled = true
+
+[swift]
+symbol = "ﯣ "
+disabled = true
+
+[nodejs]
+format = "via [ $version](bold green) "
+detect_files = ["package.json", ".node-version"]
+detect_folders = ["node_modules"]
+disabled = false

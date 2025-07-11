@@ -1,0 +1,11 @@
+{
+  "dependencies": {
+    "@tailwindcss/language-server": "^0.14.23",
+    "create-svelte": "^7.0.0",
+    "create-vite": "^7.0.1",
+    "emmet-ls": "^0.4.2",
+    "tailwindcss": "^4.1.10",
+    "typescript": "^5.8.3",
+    "typescript-language-server": "^4.3.4"
+  }
+}

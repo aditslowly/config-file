@@ -10,8 +10,8 @@ local options = {
     json = { "prettier" },
     blade = { "blade-formatter" },
     php = { "php-cs-fixer" },
-    python = {"black"},
-    go = {"goimports", "golines"},
+    python = { "black" },
+    go = { "gofumpt" },
   },
 
   format_on_save = {

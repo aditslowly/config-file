@@ -17,8 +17,8 @@ M.base46 = {
 
 M.ui = {
   statusline = {
-    theme = "minimal",
-    separator_style = "default",
+    theme = "vscode_colored",
+    separator_style = "round",
   },
   ident = {
     enable = true,

@@ -20,7 +20,7 @@ return {
 
   {
     "rafamadriz/friendly-snippets",
-    config = function ()
+    config = function()
       require("luasnip.loaders.from_vscode").lazy_load()
     end,
   },
@@ -28,7 +28,7 @@ return {
   {
     "laytan/tailwind-sorter.nvim",
     build = "cd formatter && npm i",
-    depedencies = {"nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim"},
+    depedencies = { "nvim-treesitter/nvim-treesitter", "nvim-lua/plenary.nvim" },
     config = true,
   },
 
@@ -43,11 +43,11 @@ return {
 
   {
     "brianhuster/autosave.nvim",
-    event = {"InsertEnter", "TextChanged"},
-    config = function ()
+    event = { "InsertEnter", "TextChanged" },
+    config = function()
       require("autosave").setup({
         enable = true,
-        execution_message = function ()
+        execution_message = function()
           return "Auto saved at " .. os.date("%H:%M:%S")
         end,
         debounce_delay = 135,
@@ -63,8 +63,8 @@ return {
 
   {
     "shellRaining/hlchunk.nvim",
-    event = {"BufReadPre", "BufWritePre"},
-    config = function ()
+    event = { "BufReadPre", "BufWritePre" },
+    config = function()
       require "configs.chunk"
     end,
   },
@@ -81,7 +81,7 @@ return {
   {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy",
-    config = function ()
+    config = function()
       require "configs.inline-diagnostics"
     end,
   },
@@ -89,22 +89,22 @@ return {
   {
     "IogaMaster/neocord",
     event = "VeryLazy",
-    config = function ()
+    config = function()
       require "configs.discord"
     end,
   },
-  {"nvchad/volt", lazy = true},
+  { "nvchad/volt",     lazy = true },
   {
     "nvchad/minty",
     lazy = true,
-    config = function ()
+    config = function()
       require "configs.minty"
     end,
   },
 
-  {"nvchad/menu", lazy = true},
-  {"nvchad/showkeys", cmd = "ShowKeysToggle", opts = {position = "top-center"}},
-  {"nvchad/timerly", cmd = "TimerlyToggle"},
+  { "nvchad/menu",     lazy = true },
+  { "nvchad/showkeys", cmd = "ShowKeysToggle", opts = { position = "top-center" } },
+  { "nvchad/timerly",  cmd = "TimerlyToggle" },
 
   {
     "williamboman/mason.nvim",
@@ -118,6 +118,7 @@ return {
         "prettier",
         "black",
         "gopls",
+        "gofumpt",
         "stylua",
       }
     }

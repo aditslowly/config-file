@@ -4,6 +4,7 @@ local highlights = {
   Separator      = { fg = "#141b1e", bg = "#101010" },
   Separator2     = { fg = "#141b1e", bg = "#141b1e" },
   Separator3     = { fg = "#e0af68", bg = "#141b1e" },
+  Cable          = { fg = "#73daca", bg = "#141b1e" },
   ModeText       = { fg = "#bb9af7", bg = "#141b1e" },
   PathText       = { fg = "#9ece6a", bg = "#141b1e" },
   FileText       = { fg = "#e0af68", bg = "#141b1e" },
@@ -43,7 +44,7 @@ end
 
 -- Filetype display helper
 _G.SetFiletype = function(filetype)
-  return (filetype == nil or filetype == "") and "unknown" or filetype
+  return (filetype == nil or filetype == "") and "Undefine" or filetype
 end
 
 -- Git branch detection
@@ -85,10 +86,12 @@ vim.opt.statusline = table.concat({
   "%#FileType#%{v:lua.SetFiletype(&filetype)}", -- Filetype
   "%#Separator# ", -- End rounded corner
   -- Line/Column block
-  "%#Separator#", -- Start rounded corner
+
+  "%#Separator#█", -- Start rounded corner
   "%#LineText#%2l", -- Line number
   "%#Separator#█", -- Vertical separator
-  "%#Separator3#%{v:lua.HandleColumnGap()}", -- Column icon
+  "%#Cable#󱘖 ", -- cable time
+  -- "%##%{v:lua.HandleColumnGap()}", -- Column icon
   "%#ColumnText#%2c", -- Column number
 
   -- Percentage/Total lines block

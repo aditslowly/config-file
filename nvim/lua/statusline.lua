@@ -1,18 +1,18 @@
 -- Highlight groups definition
 local highlights = {
   Normal         = { fg = "#c0caf5", bg = "#101010" },
-  Separator      = { fg = "#232a2d", bg = "#101010" },
-  Separator2     = { fg = "#232a2d", bg = "#232a2d" },
-  Separator3     = { fg = "#e0af68", bg = "#232a2d" },
-  ModeText       = { fg = "#bb9af7", bg = "#232a2d" },
-  PathText       = { fg = "#9ece6a", bg = "#232a2d" },
-  FileText       = { fg = "#e0af68", bg = "#232a2d" },
-  FileType       = { fg = "#f7768e", bg = "#232a2d" },
-  BranchName     = { fg = "#7dcfff", bg = "#232a2d" },
-  LineText       = { fg = "#bb9af7", bg = "#232a2d" },
-  ColumnText     = { fg = "#7aa2f7", bg = "#232a2d" },
-  PercentageText = { fg = "#9d7cd8", bg = "#232a2d" },
-  TotalLineText  = { fg = "#73daca", bg = "#232a2d" },
+  Separator      = { fg = "#141b1e", bg = "#101010" },
+  Separator2     = { fg = "#141b1e", bg = "#141b1e" },
+  Separator3     = { fg = "#e0af68", bg = "#141b1e" },
+  ModeText       = { fg = "#bb9af7", bg = "#141b1e" },
+  PathText       = { fg = "#9ece6a", bg = "#141b1e" },
+  FileText       = { fg = "#e0af68", bg = "#141b1e" },
+  FileType       = { fg = "#f7768e", bg = "#141b1e" },
+  BranchName     = { fg = "#7dcfff", bg = "#141b1e" },
+  LineText       = { fg = "#bb9af7", bg = "#141b1e" },
+  ColumnText     = { fg = "#7aa2f7", bg = "#141b1e" },
+  PercentageText = { fg = "#9d7cd8", bg = "#141b1e" },
+  TotalLineText  = { fg = "#73daca", bg = "#141b1e" },
 }
 
 -- Apply highlight groups
@@ -24,14 +24,14 @@ end
 _G.RecolorMode = function()
   local mode = vim.fn.mode()
   local color_map = {
-    n     = { fg = "#7aa2f7", bg = "#232a2d" }, -- normal
-    i     = { fg = "#9ece6a", bg = "#232a2d" }, -- insert
-    v     = { fg = "#f7768e", bg = "#232a2d" }, -- visual
-    V     = { fg = "#f7768e", bg = "#232a2d" }, -- visual line
-    [""] = { fg = "#f7768e", bg = "#232a2d" }, -- visual block
-    c     = { fg = "#bb9af7", bg = "#232a2d" }, -- command
-    R     = { fg = "#7dcfff", bg = "#232a2d" }, -- replace
-    t     = { fg = "#e0af68", bg = "#232a2d" }, -- terminal
+    n     = { fg = "#7aa2f7", bg = "#141b1e" }, -- normal
+    i     = { fg = "#9ece6a", bg = "#141b1e" }, -- insert
+    v     = { fg = "#f7768e", bg = "#141b1e" }, -- visual
+    V     = { fg = "#f7768e", bg = "#141b1e" }, -- visual line
+    [""] = { fg = "#f7768e", bg = "#141b1e" }, -- visual block
+    c     = { fg = "#bb9af7", bg = "#141b1e" }, -- command
+    R     = { fg = "#7dcfff", bg = "#141b1e" }, -- replace
+    t     = { fg = "#e0af68", bg = "#141b1e" }, -- terminal
   }
 
   local hl = color_map[mode]

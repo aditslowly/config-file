@@ -124,4 +124,27 @@ return {
     }
   },
 
+  {
+    "adibhanna/laravel.nvim",
+    dependencies = {
+      "MunifTajim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("laravel").setup()
+    end,
+  },
+
+  {
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim",
+    },
+    config = function()
+      require("flutter-tools").setup {}
+    end,
+  }
+
 }

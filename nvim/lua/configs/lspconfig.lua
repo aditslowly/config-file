@@ -4,7 +4,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 
 -- Daftar server atau LSP 
-local servers = {"html", "cssls", "intelephense", "lua_ls", "ts_ls", "pylsp", "gopls", "svelte"}
+local servers = {"html", "cssls", "intelephense", "lua_ls", "ts_ls", "pylsp", "gopls", "svelte". "dartls"}
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
@@ -32,6 +32,12 @@ require('lspconfig').intelephense.setup {
 lspconfig.tailwindcss.setup {
   on_attach = on_attach,
   capabilities = capabilities,
+  filetypes = {"html", "blade"},
+  init_options = {
+    userLanguages = {
+      blade = "html",
+    }
+  }
 }
 lspconfig.gopls.setup {
   on_attach = on_attach,
@@ -46,7 +52,7 @@ lspconfig.svelte.setup {
 lspconfig.ts_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
-  filetypes = {"js", "ts", "tsx", "jsx"}
+  filetypes = {"js", "ts", "tsx", "jsx", "blade"}
 }
 lspconfig.pylsp.setup{
   on_attach = on_attach,
@@ -58,4 +64,10 @@ lspconfig.emmet_ls.setup {
   on_attach = on_attach,
   capabilities = capabilities,
   filetypes = { "html", "css", "javascript", "javascriptreact", "typescriptreact", "blade" },
+}
+
+lspconfig.dartls.setup {
+  cmd = {"dart", "language-server", "--protocol=lsp"},
+  filetypes = {"dart"},
+  root_dir = lspconfig.util.root_pattern("pubspec.yaml")
 }

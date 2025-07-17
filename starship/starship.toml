@@ -42,8 +42,14 @@ symbol = " "
 disabled = true
 
 [dart]
-symbol = " "
-disabled = false
+format = "via [ Dart $version](blue) "
+detect_files = ["pubspec.yaml", ".dart-tool", "analysis_options.yaml"]
+detect_extensions = ["dart"]
+
+[custom.flutter]
+command = "cat $(dirname $(which flutter)/../version)"
+when = "test -f pubspec.yaml && grep -q flutter pubspec.yaml"
+format = "in [ Fluter $output](yellow)"
 
 [docker_context]
 symbol = " "
